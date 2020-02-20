@@ -1,10 +1,13 @@
 package com.asodc.example.simuduck;
 
-public class RubberDuck extends Duck implements Quackable {
+public class RubberDuck extends Duck {
 
-    @Override
-    public void quack() {
-        // squeak
+    public RubberDuck(String name) {
+        super(name, new FlyNoWay(), new Squeak());
+    }
+
+    public RubberDuck(String name, FlyBehaviour flyBehaviour, QuackBehaviour quackBehaviour) {
+        super(name, flyBehaviour, quackBehaviour);
     }
 
     @Override

@@ -1,5 +1,5 @@
 package com.asodc.example.simuduck;
 
-public interface Flyable {
+public interface FlyBehaviour {
     void fly();
 }

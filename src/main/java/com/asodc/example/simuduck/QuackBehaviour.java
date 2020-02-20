@@ -1,5 +1,5 @@
 package com.asodc.example.simuduck;
 
-public interface Quackable {
+public interface QuackBehaviour {
     void quack();
 }
