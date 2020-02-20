@@ -12,6 +12,6 @@ public class DecoyDuck extends Duck {
 
     @Override
     public void display() {
-        // looks like a decoy duck
+        System.out.println("Displaying DecoyDuck");
     }
 }

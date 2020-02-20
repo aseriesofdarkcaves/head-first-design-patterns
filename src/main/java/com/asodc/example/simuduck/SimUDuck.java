@@ -13,13 +13,17 @@ public class SimUDuck {
         defaultMallardDuck.performQuack();
         defaultMallardDuck.swim();
 
-        // Custom Mallard Duck that can't fly or quack
+        // Custom Mallard Duck that initially can't fly or quack, but changes its behaviour at runtime
         Duck customMallardDuck = new MallardDuck("Bob", new FlyNoWay(), new MuteQuack());
         String customMallardDuckName = customMallardDuck.getName();
         FlyBehaviour customMallardDuckFlyBehaviour = customMallardDuck.getFlyBehaviour();
         QuackBehaviour customMallardDuckQuackBehaviour = customMallardDuck.getQuackBehaviour();
         customMallardDuck.display();
         customMallardDuck.performFly();
+        customMallardDuck.setFlyBehaviour(new FlyRockedPowered());
+        customMallardDuck.performFly();
+        customMallardDuck.performQuack();
+        customMallardDuck.setQuackBehaviour(new Squeak());
         customMallardDuck.performQuack();
         customMallardDuck.swim();
     }
