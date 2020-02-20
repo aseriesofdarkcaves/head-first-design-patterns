@@ -33,6 +33,7 @@ public abstract class Duck {
     // all ducks can swim the same way
     public void swim() {
         // shared swim code for all ducks
+        System.out.println("All ducks float!");
     }
 
     protected String getName() {
