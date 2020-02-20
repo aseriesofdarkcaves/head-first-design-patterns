@@ -26,5 +26,9 @@ public class SimUDuck {
         customMallardDuck.setQuackBehaviour(new Squeak());
         customMallardDuck.performQuack();
         customMallardDuck.swim();
+
+        // Brain Power challenge page 23
+        DuckCallDevice duckWhistle = new DuckCallDevice();
+        duckWhistle.performQuack();
     }
 }
