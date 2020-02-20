@@ -11,4 +11,4 @@
 # Notes
 I made two design changes from what the book suggested:
 1. Character.fight() is a concrete method that all subtypes can use. This reduces the amount of code that was required in the subclasses (which was mostly the same anyway)
-2. WeaponBehaviour.useWeapon returns a String so it can be used in the Character.fight() method
+2. WeaponBehaviour.useWeapon() returns a String so it can be used in the Character.fight() method
