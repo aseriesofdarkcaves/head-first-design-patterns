@@ -30,6 +30,17 @@ public class WeatherData implements Subject {
         }
     }
 
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
     public float getTemperature() {
         return temperature;
     }
@@ -52,9 +63,5 @@ public class WeatherData implements Subject {
 
     public void setPressure(float pressure) {
         this.pressure = pressure;
-    }
-
-    public void measurementsChanged() {
-        notifyObservers();
     }
 }
