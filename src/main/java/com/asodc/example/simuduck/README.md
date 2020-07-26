@@ -1,8 +1,8 @@
 # com.asodc.example.simuduck
 - Inheritance:
-  - abstact superclass
+  - abstract superclass
   - interfaces
 - Composition
-- Polymorphisim
+- Polymorphism
 - Strategy pattern:
   - defines a family of algorithms, encapsulates each one and makes them interchangable. Strategy lets the algorithm vary independently from the clients that use it. 
