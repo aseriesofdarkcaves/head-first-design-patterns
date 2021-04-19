@@ -1,9 +1,9 @@
 package com.asodc.example.state;
 
-public class DispenseState implements State {
+public class SoldState implements State {
     private GumballMachine machine;
 
-    public DispenseState(GumballMachine machine) {
+    public SoldState(GumballMachine machine) {
         this.machine = machine;
     }
 
@@ -24,9 +24,6 @@ public class DispenseState implements State {
 
     @Override
     public void dispense() {
-        System.out.println("DISPENSING!");
-        machine.dispense();
-
         if (machine.getGumballCount() <= 0)
             machine.setState(machine.getSoldOutState());
         else

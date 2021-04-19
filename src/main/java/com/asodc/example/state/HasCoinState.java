@@ -25,7 +25,7 @@ public class HasCoinState implements State {
             machine.setState(machine.getSoldOutState());
         } else {
             System.out.println("TURNING CRANK!");
-            machine.setState(machine.getDispenseState());
+            machine.setState(machine.getSoldState());
         }
     }
 

@@ -1,7 +1,7 @@
 package com.asodc.example.state;
 
 public class GumballMachine {
-    private State dispenseState;
+    private State soldState;
     private State hasCoinState;
     private State noCoinState;
     private State soldOutState;
@@ -9,9 +9,10 @@ public class GumballMachine {
     private State state;
 
     private int gumballCount;
+    private int coinCount;
 
     public GumballMachine(int gumballCount) {
-        dispenseState = new DispenseState(this);
+        soldState = new SoldState(this);
         hasCoinState = new HasCoinState(this);
         noCoinState = new NoCoinState(this);
         soldOutState = new SoldOutState(this);
@@ -25,8 +26,44 @@ public class GumballMachine {
         }
     }
 
-    public State getDispenseState() {
-        return dispenseState;
+    public void receiveCoin() {
+        state.receiveCoin();
+    }
+
+    public void ejectCoin() {
+        state.ejectCoin();
+    }
+
+    public void turnCrank() {
+        state.turnCrank();
+        depositCoin();
+        dispenseGumball();
+    }
+
+    private void dispenseGumball() {
+        if (gumballCount <= 0)
+            throw new IllegalStateException("an attempt was made to dispense with no gumballs remaining - gumballCount: " + gumballCount);
+        else {
+            System.out.println("DISPENSING GUMBALL!");
+            state.dispense();
+            gumballCount--;
+        }
+    }
+
+    public int getGumballCount() {
+        return gumballCount;
+    }
+
+    public int getCoinCount() {
+        return coinCount;
+    }
+
+    private void depositCoin() {
+        coinCount++;
+    }
+
+    public State getSoldState() {
+        return soldState;
     }
 
     public State getHasCoinState() {
@@ -45,11 +82,8 @@ public class GumballMachine {
         this.state = state;
     }
 
-    public int getGumballCount() {
-        return gumballCount;
-    }
-
-    public void dispense() {
-        gumballCount--;
+    @Override
+    public String toString() {
+        return "MACHINE STATUS: " + gumballCount + " gumball(s), " + coinCount + " coin(s)";
     }
 }
