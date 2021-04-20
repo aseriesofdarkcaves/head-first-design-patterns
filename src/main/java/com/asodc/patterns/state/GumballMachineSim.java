@@ -1,16 +1,28 @@
 package com.asodc.patterns.state;
 
 public class GumballMachineSim {
+    private static GumballMachine machine;
+
     public static void main(String... args) {
-        GumballMachine machine = new GumballMachine(10);
-        printMachineStatus(machine);
+        machine = new GumballMachine(10);
+        printMachineStatus();
 
         machine.receiveCoin();
         machine.turnCrank();
-        printMachineStatus(machine);
+        printMachineStatus();
+
+        machine.receiveCoin();
+        machine.ejectCoin();
+        printMachineStatus();
+
+        machine.ejectCoin();
+        printMachineStatus();
+
+        machine.turnCrank();
+        printMachineStatus();
     }
 
-    private static void printMachineStatus(GumballMachine machine) {
-        System.out.println(machine.toString());
+    private static void printMachineStatus() {
+        System.out.println(machine.toString() + "\r\n");
     }
 }

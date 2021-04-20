@@ -36,6 +36,7 @@ public class GumballMachine {
 
     public void turnCrank() {
         state.turnCrank();
+        // TODO: this is a bug - depositing and dispensing should depend on the current state
         depositCoin();
         dispenseGumball();
     }
@@ -85,5 +86,9 @@ public class GumballMachine {
     @Override
     public String toString() {
         return "MACHINE STATUS: " + gumballCount + " gumball(s), " + coinCount + " coin(s)";
+    }
+
+    public State getState() {
+        return state;
     }
 }
