@@ -1,4 +1,4 @@
-# com.asodc.patterns.observer.weather.impl1
+# com.asodc.patterns.observer
 The Observer Pattern defines a one-to-many dependency between objects
 so that when one object changes state, all of its dependents are updated automatically.
 

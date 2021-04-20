@@ -1,4 +1,4 @@
-# com.asodc.patterns.strategy
+# com.asodc.patterns.strategy.simuduck
 - Inheritance:
   - abstract superclass
   - interfaces
