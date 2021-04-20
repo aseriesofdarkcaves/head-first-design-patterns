@@ -10,6 +10,7 @@ public class ForecastDisplay implements Observer, DisplayElement {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
+
     @Override
     public void display() {
         System.out.println("===== Forecast Display =====");
