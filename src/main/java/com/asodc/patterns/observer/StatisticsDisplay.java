@@ -1,11 +1,17 @@
 package com.asodc.patterns.observer;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
-    private float temperature;
-    private float humidity;
-    private float pressure;
+    private float averageTemperature;
+    private float averageHumidity;
+    private float averagePressure;
 
     private Subject weatherData;
+
+    private int updateCount = 0;
+
+    private float temperatureSum;
+    private float humiditySum;
+    private float pressureSum;
 
     public StatisticsDisplay(Subject weatherData) {
         this.weatherData = weatherData;
@@ -15,15 +21,24 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     @Override
     public void display() {
         System.out.println("===== Statistics Display =====");
-        // TODO: print a history or print average?
-        System.out.println("TODO: implement statistic display logic");
+        System.out.printf("Average temperature: %f\r\n", averageTemperature);
+        System.out.printf("Average humidity: %f\r\n", averageHumidity);
+        System.out.printf("Average pressure: %f\r\n", averagePressure);
     }
 
     @Override
     public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
+        updateCount++;
+
+        temperatureSum += temperature;
+        averageTemperature = (temperatureSum) / updateCount;
+
+        humiditySum += humidity;
+        averageHumidity = (humiditySum) / updateCount;
+
+        pressureSum += pressure;
+        averagePressure = (pressureSum) / updateCount;
+
         display();
     }
 }
