@@ -15,6 +15,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     @Override
     public void display() {
         System.out.println("===== Statistics Display =====");
+        // TODO: print a history or print average?
         System.out.println("TODO: implement statistic display logic");
     }
 

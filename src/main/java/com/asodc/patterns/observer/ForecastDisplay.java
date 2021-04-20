@@ -1,5 +1,7 @@
 package com.asodc.patterns.observer;
 
+import java.util.Random;
+
 public class ForecastDisplay implements Observer, DisplayElement {
     private float temperature;
     private float humidity;
@@ -14,8 +16,12 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
+        Random random = new Random();
+
         System.out.println("===== Forecast Display =====");
-        System.out.println("TODO: implement forecast logic");
+        System.out.printf("Temperature: %f\r\n", temperature + random.nextFloat());
+        System.out.printf("Humidity: %f\r\n", humidity + random.nextFloat());
+        System.out.printf("Pressure: %f\r\n", pressure + random.nextFloat());
     }
 
     @Override
