@@ -1,4 +1,4 @@
-package com.asodc.patterns.observer;
+package com.asodc.patterns.observer.custom;
 
 import java.util.ArrayList;
 import java.util.List;

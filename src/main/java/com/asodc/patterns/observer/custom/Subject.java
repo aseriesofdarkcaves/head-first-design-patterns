@@ -1,4 +1,4 @@
-package com.asodc.patterns.observer;
+package com.asodc.patterns.observer.custom;
 
 public interface Subject {
     // all fields in an interface have to be public static final fields - i.e. constants

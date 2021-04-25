@@ -1,4 +1,4 @@
-package com.asodc.patterns.observer;
+package com.asodc.patterns.observer.custom;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
     public ForecastDisplay(Subject weatherData) {
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+        this.weatherData.registerObserver(this);
     }
 
     @Override

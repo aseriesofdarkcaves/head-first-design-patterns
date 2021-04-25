@@ -1,4 +1,4 @@
-package com.asodc.patterns.observer;
+package com.asodc.patterns.observer.custom;
 
 public class WeatherStation {
     public static void main(String... args) {

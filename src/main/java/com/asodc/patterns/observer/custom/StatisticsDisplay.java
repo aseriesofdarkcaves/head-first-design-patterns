@@ -1,4 +1,4 @@
-package com.asodc.patterns.observer;
+package com.asodc.patterns.observer.custom;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
     private float averageTemperature;
@@ -15,7 +15,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
     public StatisticsDisplay(Subject weatherData) {
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+        this.weatherData.registerObserver(this);
     }
 
     @Override
