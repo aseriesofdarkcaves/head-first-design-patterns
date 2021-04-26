@@ -36,19 +36,7 @@ public class GumballMachine {
 
     public void turnCrank() {
         state.turnCrank();
-        // TODO: this is a bug - depositing and dispensing should depend on the current state
-        depositCoin();
-        dispenseGumball();
-    }
-
-    private void dispenseGumball() {
-        if (gumballCount <= 0)
-            throw new IllegalStateException("an attempt was made to dispense with no gumballs remaining - gumballCount: " + gumballCount);
-        else {
-            System.out.println("DISPENSING GUMBALL!");
-            state.dispense();
-            gumballCount--;
-        }
+        state.dispense();
     }
 
     public int getGumballCount() {
@@ -59,36 +47,44 @@ public class GumballMachine {
         return coinCount;
     }
 
-    private void depositCoin() {
-        coinCount++;
-    }
-
-    public State getSoldState() {
-        return soldState;
-    }
-
-    public State getHasCoinState() {
-        return hasCoinState;
-    }
-
-    public State getNoCoinState() {
-        return noCoinState;
-    }
-
-    public State getSoldOutState() {
-        return soldOutState;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
-
     @Override
     public String toString() {
         return "MACHINE STATUS: " + gumballCount + " gumball(s), " + coinCount + " coin(s)";
     }
 
-    public State getState() {
+    void depositCoin() {
+        coinCount++;
+    }
+
+    void dispenseGumball() {
+        if (gumballCount <= 0)
+            throw new IllegalStateException("an attempt was made to dispense with no gumballs remaining - gumballCount: " + gumballCount);
+        else {
+            gumballCount--;
+        }
+    }
+
+    void setState(State state) {
+        this.state = state;
+    }
+
+    State getSoldState() {
+        return soldState;
+    }
+
+    State getHasCoinState() {
+        return hasCoinState;
+    }
+
+    State getNoCoinState() {
+        return noCoinState;
+    }
+
+    State getSoldOutState() {
+        return soldOutState;
+    }
+
+    State getState() {
         return state;
     }
 }

@@ -24,9 +24,15 @@ public class SoldState implements State {
 
     @Override
     public void dispense() {
-        if (machine.getGumballCount() <= 0)
+        if (machine.getGumballCount() <= 0) {
+            System.out.println("CANNOT DISPENSE, SOLD OUT!");
             machine.setState(machine.getSoldOutState());
-        else
+        }
+        else {
+            System.out.println("DISPENSING GUMBALL!");
+            machine.depositCoin();
+            machine.dispenseGumball();
             machine.setState(machine.getNoCoinState());
+        }
     }
 }
