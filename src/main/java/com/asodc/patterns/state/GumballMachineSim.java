@@ -1,5 +1,7 @@
 package com.asodc.patterns.state;
 
+import com.asodc.patterns.state.gumball.GumballMachine;
+
 public class GumballMachineSim {
     private static GumballMachine machine;
 

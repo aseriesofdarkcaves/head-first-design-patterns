@@ -1,5 +1,6 @@
-package com.asodc.patterns.state;
+package com.asodc.patterns.state.gumball;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,13 +19,13 @@ public class GumballMachineTests {
 
     @Test
     public void initialState() {
-        assertInstanceOf(NoCoinState.class, machine.getState(), INCORRECT_STATE_MESSAGE);
+        Assertions.assertInstanceOf(NoCoinState.class, machine.getState(), INCORRECT_STATE_MESSAGE);
     }
 
     @Test
     public void insertCoin() {
         machine.receiveCoin();
-        assertInstanceOf(HasCoinState.class, machine.getState(), INCORRECT_STATE_MESSAGE);
+        Assertions.assertInstanceOf(HasCoinState.class, machine.getState(), INCORRECT_STATE_MESSAGE);
     }
 
     @Test
@@ -38,7 +39,6 @@ public class GumballMachineTests {
     public void turnCrank() {
         machine.receiveCoin();
         machine.turnCrank();
-        // TODO: I thought this would result in SoldState
         assertInstanceOf(NoCoinState.class, machine.getState(), INCORRECT_STATE_MESSAGE);
     }
 

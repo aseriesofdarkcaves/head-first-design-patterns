@@ -1,4 +1,4 @@
-package com.asodc.patterns.state;
+package com.asodc.patterns.state.gumball;
 
 public class SoldOutState implements State {
     private GumballMachine machine;
