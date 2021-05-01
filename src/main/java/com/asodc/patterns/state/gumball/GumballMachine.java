@@ -1,10 +1,10 @@
 package com.asodc.patterns.state.gumball;
 
 public class GumballMachine {
-    private State soldState;
-    private State hasCoinState;
-    private State noCoinState;
-    private State soldOutState;
+    private final State soldState;
+    private final State hasCoinState;
+    private final State noCoinState;
+    private final State soldOutState;
 
     private State state;
 
@@ -58,7 +58,7 @@ public class GumballMachine {
 
     void dispenseGumball() {
         if (gumballCount <= 0)
-            throw new IllegalStateException("an attempt was made to dispense with no gumballs remaining - gumballCount: " + gumballCount);
+            throw new IllegalStateException("an attempt was made to dispense with no gumballs remaining - " + this);
         else {
             gumballCount--;
         }
