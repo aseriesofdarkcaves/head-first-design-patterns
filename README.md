@@ -1,4 +1,10 @@
-# Contents
-- [com.asodc.patterns.strategy](src/main/java/com/asodc/patterns/strategy) - Strategy Pattern: Page 22 Simuduck implementation
-- [com.asodc.patterns.strategy.adventure](src/main/java/com/asodc/patterns/strategy/adventure) - Strategy Pattern: Page 25 Design Puzzle exercise - Adventure Game
-- [com.asodc.patterns.observer.weather.impl1](src/main/java/com/asodc/patterns/observer) - Observer Pattern: Page 60 naive Weather Station implementation
+# head-first-design-patterns
+- __Strategy__ - _"The Strategy Pattern defines a family of algorithms, encapsulates each one and makes them
+  interchangeable.
+  Strategy lets the algorithm vary independently from the clients that use it."_
+  
+- __Observer__ - _"The Observer Pattern defines a one-to-many dependency between objects
+  so that when one object changes state, all of its dependents are updated automatically."_
+  
+- __State__ - _"The State Pattern allows an object to alter its behaviour when its internal state changes.
+  The object will appear to change its class."_
